@@ -26,14 +26,12 @@ export default class ContactList extends LightningElement {
     connectedCallback() {
         getContacts()
             .then(result => {
-                console.log(result);
                 this.contacts = result;
             });
     }
 
     handleSearchTermChange(event) {
         const searchTerm = event.detail.value;
-        console.log('searchTerm => ' + searchTerm);
 
         if (searchTerm) {
             searchContacts({ searchTerm })
