@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Contact List" icon-name="standard:contact_list">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Search" onchange={handleSearchTermChange}></lightning-input>
+        </div>
+        <template if:true={contacts}>
+            <lightning-datatable
+                key-field="Id"
+                data={contacts}
+                columns={columns}
+                onrowaction={handleRowAction}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
